@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 33,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "1rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "tcy38icf7n",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 9,
+  "mobileLeftColumn": 5,
+  "mobileRightColumn": 21,
+  "mobileTopRow": 5,
+  "needsErrorInfo": false,
+  "originalBottomRow": 56,
+  "originalTopRow": 5,
+  "overflow": "NONE",
+  "parentColumnSpace": 7.1171875,
+  "parentId": "yom656l0fr",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 61,
+  "shouldTruncate": false,
+  "text": "{{\n\"📊 DASHBOARD COMERCIAL\\n\\n\" +\n\n\"💰 Ingreso real: S/ \" + (get_funnel_advanced.data[0]?.ingreso_real || 0) + \"\\n\\n\" +\n\n\"📈 Proyección pipeline: S/ \" + (get_funnel_advanced.data[0]?.ingreso_proyectado || 0) + \"\\n\\n\" +\n\n\"🤖 Predicción mensual:\\n\" +\n\"Ventas: \" + (get_funnel_advanced.data[0]?.ventas_estimadas_mes || 0) + \"\\n\" +\n\"Ingreso: S/ \" + (get_funnel_advanced.data[0]?.ingreso_estimado_mes || 0) + \"\\n\\n\" +\n\n\"🎯 Conversión final: \" + (get_funnel_advanced.data[0]?.p5 || 0) + \"%\\n\\n\" +\n\n\"📌 Diagnóstico:\\n\" + (get_funnel_advanced.data[0]?.diagnostico || \"\")\n}}",
+  "textAlign": "LEFT",
+  "textColor": "#231F20",
+  "topRow": 5,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "ucglxk8cg9",
+  "widgetName": "Text5"
+}

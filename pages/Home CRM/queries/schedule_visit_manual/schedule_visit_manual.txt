@@ -1,0 +1,12 @@
+select schedule_property_visit(
+  '{{appsmith.store.lead_id}}'::uuid,
+  (
+    select property_id
+    from crm_best_property_match_view
+    where lead_id = '{{appsmith.store.lead_id}}'::uuid
+    limit 1
+  )::uuid,
+  '{{DatePickerVisita.selectedDate}}'::timestamptz,
+  'presencial',
+  'Visita agendada manualmente desde Appsmith.'
+);

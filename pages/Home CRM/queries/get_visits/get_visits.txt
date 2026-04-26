@@ -1,0 +1,14 @@
+select
+  visit_id,
+  cliente,
+  codigo_propiedad,
+  proyecto,
+  distrito,
+  fecha_visita,
+  tipo_visita,
+  estado_visita,
+  asistio,
+  siguiente_paso
+from crm_scheduled_visits_view
+where lead_id = '{{appsmith.store.lead_id}}'::uuid
+order by fecha_visita desc;

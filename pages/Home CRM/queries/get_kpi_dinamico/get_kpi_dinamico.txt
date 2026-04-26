@@ -1,0 +1,20 @@
+select
+  count(*) filter (where status not in ('cerrado ganado','cerrado perdido')) as clientes_potenciales,
+
+  count(*) filter (where status = 'cerrado ganado') as ventas_ganadas,
+
+  count(*) filter (where status = 'cerrado perdido') as ventas_perdidas,
+
+  count(*) filter (where status = 'negociacion') as en_negociacion,
+
+  case
+    when count(*) filter (where status = 'negociacion') > 5 
+      then 'Alta carga comercial - priorizar cierres'
+    when count(*) filter (where status = 'cerrado perdido') > count(*) filter (where status = 'cerrado ganado')
+      then 'Más pérdidas que cierres - revisar estrategia'
+    when count(*) filter (where status = 'cerrado ganado') > 0
+      then 'Buen desempeño comercial'
+    else 'Sin actividad relevante aún'
+  end as observacion
+
+from leads;

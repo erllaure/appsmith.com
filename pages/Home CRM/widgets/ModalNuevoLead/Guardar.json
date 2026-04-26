@@ -1,0 +1,54 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 40,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonStyle": "PRIMARY_BUTTON",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "glqwi4o9gj",
+  "leftColumn": 29,
+  "minWidth": 120,
+  "mobileBottomRow": 22,
+  "mobileLeftColumn": 47,
+  "mobileRightColumn": 63,
+  "mobileTopRow": 18,
+  "needsErrorInfo": false,
+  "onClick": "{{\n  insert_new_lead.run(() => {\n    get_crm_main.run();\n    closeModal('ModalNuevoLead');\n\n    resetWidget('InputNombreLead');\n    resetWidget('InputTelefonoLead');\n    resetWidget('InputEmailLead');\n    resetWidget('InputDistritosLead');\n    resetWidget('InputDormitoriosLead');\n    resetWidget('InputPresupuestoLead');\n    resetWidget('SelectCanalLead');\n    resetWidget('SelectPagoLead');\n    resetWidget('SelectTiempoLead');\n\n    showAlert('Lead creado correctamente', 'success');\n  }, () => {\n    showAlert('Error al crear lead', 'error');\n  })\n}}",
+  "parentId": "ns87mnvdqc",
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 42,
+  "text": "Guardar",
+  "topRow": 36,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "t0f67pvfuv",
+  "widgetName": "Guardar"
+}

@@ -1,0 +1,53 @@
+with base as (
+  select
+    id,
+    status,
+    created_at,
+    coalesce(expected_amount,0) as monto_esperado,
+    coalesce(estimated_commission,0) as comision,
+    coalesce(close_probability,0) as probabilidad
+  from opportunities
+),
+
+resumen as (
+  select
+    count(*) as total_oportunidades,
+
+    count(*) filter (where status = 'ganada') as ganadas,
+    count(*) filter (where status = 'perdida') as perdidas,
+    count(*) filter (where status = 'abierta') as abiertas,
+
+    sum(comision) filter (where status = 'ganada') as ingreso_real,
+
+    sum((monto_esperado * probabilidad)/100) filter (where status = 'abierta') as ingreso_proyectado,
+
+    round(
+      (count(*) filter (where status = 'ganada') * 100.0) /
+      nullif(count(*),0),
+      2
+    ) as tasa_cierre
+  from base
+),
+
+tendencia as (
+  select
+    to_char(created_at, 'YYYY-MM') as mes,
+    count(*) filter (where status = 'ganada') as ventas
+  from base
+  group by mes
+),
+
+observacion as (
+  select
+    case
+      when (select ganadas from resumen) = 0 then 'Sin cierres aún - enfocar en conversión'
+      when (select abiertas from resumen) > 10 then 'Alto pipeline - priorizar cierres'
+      when (select tasa_cierre from resumen) < 20 then 'Baja tasa de cierre - revisar estrategia'
+      else 'Rendimiento comercial saludable'
+    end as mensaje
+)
+
+select
+  r.*,
+  o.mensaje
+from resumen r, observacion o;

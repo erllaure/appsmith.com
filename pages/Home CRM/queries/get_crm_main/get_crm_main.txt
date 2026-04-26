@@ -1,0 +1,20 @@
+select
+  lead_id,
+  cliente,
+  telefono,
+  canal,
+  etapa_lead,
+  temperatura,
+  presupuesto,
+  tiempo_compra,
+  mejor_propiedad,
+  proyecto_recomendado,
+  precio_propiedad,
+  porcentaje_match,
+  etapa_oportunidad,
+  comision_estimada,
+  probabilidad_cierre,
+  monto_esperado,
+  estado_oportunidad,
+  accion_recomendada
+from crm_main_view;

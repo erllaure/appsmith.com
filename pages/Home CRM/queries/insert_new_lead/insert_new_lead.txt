@@ -1,0 +1,34 @@
+insert into leads (
+  full_name,
+  phone,
+  whatsapp,
+  email,
+  source,
+  preferred_districts,
+  bedrooms,
+  max_budget,
+  payment_method,
+  purchase_timeline,
+  interest_level,
+  lead_temperature,
+  status,
+  consent_data,
+  notes
+)
+values (
+  '{{InputNombreLead.text}}',
+  '{{InputTelefonoLead.text}}',
+  '{{InputTelefonoLead.text}}',
+  '{{InputEmailLead.text}}',
+  '{{SelectCanalLead.selectedOptionValue}}',
+  string_to_array('{{InputDistritosLead.text}}', ','),
+  {{InputDormitoriosLead.text || 0}},
+  {{InputPresupuestoLead.text || 0}},
+  '{{SelectPagoLead.selectedOptionValue}}',
+  '{{SelectTiempoLead.selectedOptionValue}}',
+  'alto',
+  'caliente',
+  'nuevo',
+  true,
+  'Lead creado desde modal Appsmith.'
+);

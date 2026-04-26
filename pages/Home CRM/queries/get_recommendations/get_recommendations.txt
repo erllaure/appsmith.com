@@ -1,0 +1,11 @@
+select
+  codigo_propiedad,
+  proyecto,
+  distrito_propiedad,
+  precio_propiedad,
+  dormitorios_propiedad,
+  porcentaje_match,
+  motivo_recomendacion
+from crm_property_recommendations_view
+where lead_id = '{{appsmith.store.lead_id}}'
+order by porcentaje_match desc;

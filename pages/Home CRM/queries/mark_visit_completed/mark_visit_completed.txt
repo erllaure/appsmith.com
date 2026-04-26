@@ -1,0 +1,6 @@
+select mark_visit_as_completed(
+  '{{TableVisitas.selectedRow.visit_id}}'::uuid,
+  'Visita marcada como realizada desde Appsmith.',
+  'alto',
+  'Crear oportunidad comercial.'
+);

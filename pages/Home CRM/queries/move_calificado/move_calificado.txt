@@ -1,0 +1,4 @@
+select move_to_calificado(
+  '{{appsmith.store.lead_id}}',
+  'Cliente calificado desde Appsmith: tiene interés, presupuesto y zona definida.'
+);

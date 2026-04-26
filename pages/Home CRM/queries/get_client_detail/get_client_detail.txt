@@ -1,0 +1,3 @@
+select *
+from crm_client_profile_view
+where lead_id = '{{appsmith.store.lead_id}}';

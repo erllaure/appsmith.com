@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 19,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "glqwi4o9gj",
+  "leftColumn": 33,
+  "minWidth": 120,
+  "mobileBottomRow": 19,
+  "mobileLeftColumn": 33,
+  "mobileRightColumn": 49,
+  "mobileTopRow": 15,
+  "needsErrorInfo": false,
+  "onClick": "{{\n  create_opportunity_visit.run(() => {\n    get_active_opportunities.run();\n    get_crm_main.run();\n    get_client_detail.run();\n    showAlert(\"Oportunidad creada\", \"success\");\n  })\n}}",
+  "parentColumnSpace": 23.53125,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 49,
+  "text": "Crear oportunidad",
+  "topRow": 15,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "5f5expnwmw",
+  "widgetName": "Button6"
+}

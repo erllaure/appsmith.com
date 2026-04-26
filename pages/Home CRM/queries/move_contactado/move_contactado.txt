@@ -1,0 +1,4 @@
+select move_to_contactado(
+  '{{appsmith.store.lead_id}}',
+  'Cliente contactado desde Appsmith.'
+);

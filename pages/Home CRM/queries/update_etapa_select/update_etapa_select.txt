@@ -1,0 +1,5 @@
+select update_lead_stage(
+  '{{appsmith.store.lead_id}}'::uuid,
+  '{{SelectEtapa.selectedOptionValue}}',
+  'Etapa actualizada desde Appsmith.'
+);

@@ -1,0 +1,60 @@
+{
+  "animateLoading": true,
+  "backgroundColor": "",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 46,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    },
+    {
+      "key": "textColor"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [],
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "1.875rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "tcy38icf7n",
+  "leftColumn": 9,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 6,
+  "mobileLeftColumn": 9,
+  "mobileRightColumn": 25,
+  "mobileTopRow": 2,
+  "needsErrorInfo": false,
+  "originalBottomRow": 46,
+  "originalTopRow": 2,
+  "overflow": "NONE",
+  "parentColumnSpace": 8.51171875,
+  "parentId": "915rzb6rmg",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 62,
+  "shouldTruncate": false,
+  "text": "{{\n\"💼 DASHBOARD COMERCIAL\\n\\n\" +\n\n\"💰 Ingreso real: S/ \" + (get_kpi_full.data[0]?.ingreso_real || 0) + \"\\n\\n\" +\n\n\"📈 Proyección: S/ \" + (get_kpi_full.data[0]?.ingreso_proyectado || 0) + \"\\n\\n\" +\n\n\"🎯 Tasa de cierre: \" + (get_kpi_full.data[0]?.tasa_cierre || 0) + \"%\\n\\n\" +\n\n\"🔥 Oportunidades abiertas: \" + (get_kpi_full.data[0]?.abiertas || 0) + \"\\n\\n\" +\n\n\"📌 Observación:\\n\" + (get_kpi_full.data[0]?.mensaje || \"\")\n}}",
+  "textAlign": "LEFT",
+  "textColor": "{{appsmith.theme.colors.backgroundColor}}",
+  "topRow": 2,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "7u55puxwno",
+  "widgetName": "Text1"
+}

@@ -1,0 +1,74 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 28,
+  "bottomRowBeforeCollapse": 28,
+  "boxShadow": "none",
+  "closeOnSelection": true,
+  "dateFormat": "DD / MMMM / YYYY      \nHH:MM",
+  "datePickerType": "DATE_PICKER",
+  "defaultDate": "",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "dateFormat"
+    },
+    {
+      "key": "defaultDate"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "firstDayOfWeek": "0",
+  "isDisabled": false,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": "{{ SelectEtapa.selectedOptionValue === \"visita agendada\" }}",
+  "key": "86dkxn9eh7",
+  "label": "Dia y hora de Visita",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 28,
+  "maxDate": "2121-12-31T18:29:00.000Z",
+  "maxDynamicHeight": 9000,
+  "minDate": "1920-12-31T18:30:00.000Z",
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 21,
+  "mobileLeftColumn": 32,
+  "mobileRightColumn": 52,
+  "mobileTopRow": 14,
+  "needsErrorInfo": false,
+  "originalBottomRow": 28,
+  "originalTopRow": 21,
+  "parentColumnSpace": 23.53125,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 38,
+  "shortcuts": false,
+  "timePrecision": "minute",
+  "topRow": 21,
+  "topRowBeforeCollapse": 21,
+  "type": "DATE_PICKER_WIDGET2",
+  "version": 2,
+  "widgetId": "7czwo2ynzo",
+  "widgetName": "DatePickerVisita"
+}

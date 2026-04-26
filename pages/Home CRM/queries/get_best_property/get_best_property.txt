@@ -1,0 +1,9 @@
+select
+  property_id,
+  codigo_propiedad,
+  proyecto,
+  distrito_propiedad,
+  precio_propiedad,
+  porcentaje_match
+from crm_best_property_match_view
+where lead_id = '{{appsmith.store.lead_id}}';

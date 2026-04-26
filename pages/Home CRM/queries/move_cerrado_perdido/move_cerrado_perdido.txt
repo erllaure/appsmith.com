@@ -1,0 +1,4 @@
+select move_to_cerrado_perdido(
+  '{{appsmith.store.lead_id}}',
+  'Oportunidad cerrada como perdida desde Appsmith.'
+);

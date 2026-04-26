@@ -1,0 +1,4 @@
+select move_to_cerrado_ganado(
+  '{{appsmith.store.lead_id}}',
+  'Venta cerrada como ganada desde Appsmith.'
+);

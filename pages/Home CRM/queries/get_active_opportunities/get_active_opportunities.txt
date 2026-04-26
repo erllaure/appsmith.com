@@ -1,0 +1,13 @@
+select
+  opportunity_id,
+  cliente,
+  codigo_propiedad,
+  proyecto,
+  etapa_comercial,
+  comision_estimada,
+  probabilidad_cierre,
+  monto_esperado,
+  fecha_estimada_cierre,
+  alerta_comercial
+from crm_active_opportunities_view
+where lead_id = '{{appsmith.store.lead_id}}'::uuid;

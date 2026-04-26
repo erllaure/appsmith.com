@@ -1,0 +1,23 @@
+{
+  "appIsExample": false,
+  "appLayout": {
+    "type": "DESKTOP"
+  },
+  "applicationVersion": 2,
+  "collapseInvisibleWidgets": true,
+  "color": "#F3F1C7",
+  "evaluationVersion": 2,
+  "pages": [
+    {
+      "id": "Home CRM",
+      "isDefault": true
+    },
+    {
+      "id": "Dashboard",
+      "isDefault": false
+    }
+  ],
+  "unpublishedAppLayout": {
+    "type": "DESKTOP"
+  }
+}

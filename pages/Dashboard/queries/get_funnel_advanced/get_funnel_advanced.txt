@@ -1,0 +1,83 @@
+with base as (
+  select
+    l.id,
+    l.status,
+    l.created_at,
+    coalesce(o.expected_amount,0) as monto,
+    coalesce(o.close_probability,0) as probabilidad,
+    coalesce(o.estimated_commission,0) as comision
+  from leads l
+  left join opportunities o on o.lead_id = l.id
+),
+
+-- 📊 FUNNEL
+funnel as (
+  select
+    count(*) filter (where status = 'nuevo') as nuevos,
+    count(*) filter (where status = 'contactado') as contactados,
+    count(*) filter (where status = 'calificado') as calificados,
+    count(*) filter (where status = 'visita agendada') as visitas,
+    count(*) filter (where status = 'negociacion') as negociacion,
+    count(*) filter (where status = 'cerrado ganado') as ganados
+  from base
+),
+
+-- 💰 INGRESOS
+ingresos as (
+  select
+    sum(comision) filter (where status = 'cerrado ganado') as ingreso_real,
+    sum((monto * probabilidad)/100) filter (where status = 'negociacion') as ingreso_proyectado
+  from base
+),
+
+-- 📈 TENDENCIA MENSUAL
+tendencia as (
+  select
+    to_char(created_at, 'YYYY-MM') as mes,
+    count(*) filter (where status = 'cerrado ganado') as ventas_mes,
+    sum(comision) filter (where status = 'cerrado ganado') as ingreso_mes
+  from base
+  group by mes
+  order by mes
+),
+
+-- 🤖 PREDICCIÓN (simple pero útil)
+prediccion as (
+  select
+    round(avg(ventas_mes)) as ventas_estimadas_mes,
+    round(avg(ingreso_mes)) as ingreso_estimado_mes
+  from tendencia
+),
+
+-- 🎯 CONVERSIONES
+conversion as (
+  select
+    f.*,
+    round(contactados * 100.0 / nullif(nuevos,0),1) as p1,
+    round(calificados * 100.0 / nullif(contactados,0),1) as p2,
+    round(visitas * 100.0 / nullif(calificados,0),1) as p3,
+    round(negociacion * 100.0 / nullif(visitas,0),1) as p4,
+    round(ganados * 100.0 / nullif(negociacion,0),1) as p5
+  from funnel f
+),
+
+-- 📌 DIAGNÓSTICO
+final as (
+  select
+    c.*,
+    i.ingreso_real,
+    i.ingreso_proyectado,
+    p.ventas_estimadas_mes,
+    p.ingreso_estimado_mes,
+    case
+      when c.p5 < 20 then '⚠️ Baja tasa de cierre'
+      when c.p3 < 30 then '⚠️ Problema en visitas'
+      when i.ingreso_real > 0 then '✅ Buen desempeño'
+      else 'Sin actividad suficiente'
+    end as diagnostico
+  from conversion c
+  cross join ingresos i
+  cross join prediccion p
+)
+
+select * from final;

@@ -1,0 +1,5 @@
+select create_opportunity_from_visit(
+  '{{get_visits.data[0].visit_id}}'::uuid,
+  60,
+  30
+);

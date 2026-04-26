@@ -1,0 +1,30 @@
+with etapas as (
+  select
+    count(*) filter (where status = 'nuevo') as nuevos,
+    count(*) filter (where status = 'contactado') as contactados,
+    count(*) filter (where status = 'calificado') as calificados,
+    count(*) filter (where status = 'visita agendada') as visitas,
+    count(*) filter (where status = 'negociacion') as negociacion,
+    count(*) filter (where status = 'cerrado ganado') as ganados
+  from leads
+),
+
+conversion as (
+  select
+    nuevos,
+    contactados,
+    calificados,
+    visitas,
+    negociacion,
+    ganados,
+
+    round(contactados * 100.0 / nullif(nuevos,0),2) as conv_contacto,
+    round(calificados * 100.0 / nullif(contactados,0),2) as conv_calificado,
+    round(visitas * 100.0 / nullif(calificados,0),2) as conv_visita,
+    round(negociacion * 100.0 / nullif(visitas,0),2) as conv_negociacion,
+    round(ganados * 100.0 / nullif(negociacion,0),2) as conv_cierre
+
+  from etapas
+)
+
+select * from conversion;

@@ -1,0 +1,65 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 28,
+  "boxShadow": "none",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => (  get_client_detail.data[0]?.etapa_actual || \"\" ))(SelectEtapa.options, SelectEtapa.serverSideFiltering) }}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "defaultOptionValue"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "m83gbyccrs",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelText": "SelectEtapa",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 8,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 23,
+  "mobileLeftColumn": 8,
+  "mobileRightColumn": 28,
+  "mobileTopRow": 16,
+  "needsErrorInfo": false,
+  "optionLabel": "label",
+  "optionValue": "value",
+  "parentColumnSpace": 23.53125,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 28,
+  "serverSideFiltering": false,
+  "sourceData": "{{\n[\n  { label: \"Contactado\", value: \"contactado\" },\n  { label: \"Calificado\", value: \"calificado\" },\n  { label: \"Visita agendada\", value: \"visita agendada\" },\n  { label: \"Negociación\", value: \"negociacion\" },\n  { label: \"Cerrado ganado\", value: \"cerrado ganado\" },\n  { label: \"Cerrado perdido\", value: \"cerrado perdido\" }\n]\n}}",
+  "topRow": 21,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "tymn5s336z",
+  "widgetName": "SelectEtapa"
+}

@@ -1,0 +1,62 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 28,
+  "boxShadow": "none",
+  "defaultOptionValue": "Canal",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "ctreem7wef",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelText": "Canal",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 28,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 21,
+  "mobileTopRow": 21,
+  "needsErrorInfo": false,
+  "optionLabel": "label",
+  "optionValue": "value",
+  "parentColumnSpace": 9.96875,
+  "parentId": "ns87mnvdqc",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 21,
+  "serverSideFiltering": false,
+  "sourceData": "{{\n[\n  { label: \"WhatsApp\", value: \"WhatsApp\" },\n  { label: \"Facebook\", value: \"Facebook\" },\n  { label: \"Instagram\", value: \"Instagram\" },\n  { label: \"Landing Page\", value: \"Landing Page\" },\n  { label: \"Referido\", value: \"Referido\" }\n]\n}}",
+  "topRow": 21,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "kyajz9m9lf",
+  "widgetName": "SelectCanalLead"
+}
